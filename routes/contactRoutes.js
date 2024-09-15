@@ -4,7 +4,6 @@ const { sendEmail } = require('../services/emailService');
 
 router.post('/contact', async (req, res) => {
   const { name, email, message } = req.body;
-
   // Call the sendEmail function
   const result = await sendEmail(name, email, message);
 
