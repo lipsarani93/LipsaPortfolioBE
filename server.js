@@ -13,7 +13,9 @@ app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(helmet());
 
-
+app.get('/', (req, res) => {
+  res.send('This is an open route. Anyone can access this.');
+});
 
 // Define routes
 app.use('/api', require('./routes/contactRoutes'));
