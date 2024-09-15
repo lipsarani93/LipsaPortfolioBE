@@ -10,7 +10,8 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173' }));
+const corsOption ={origin:['http://localhost:5173','https://lipsa-portfolio.vercel.app' ]}
+app.use(cors(corsOption));
 app.use(helmet());
 
 app.get('/', (req, res) => {
